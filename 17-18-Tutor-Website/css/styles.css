@@ -63,7 +63,7 @@ img {
 }
 
 .navbar {
-  background: black;
+  background: transparent;
   color: white;
   padding: 1rem 2rem;
   position: fixed;
