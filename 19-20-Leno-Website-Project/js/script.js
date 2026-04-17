@@ -6,6 +6,35 @@ document.addEventListener('DOMContentLoaded', function () {
   toggleButton.addEventListener('click', function () {
     mobileMenu.classList.toggle('active');
   })
+
+  // Video Modal
+  const modal = document.getElementById('videoModal');
+  const videoButton = document.querySelector('.preview__video-button');
+  const closeButton = document.querySelector('.modal__close-button');
+  const videoPlayer = document.getElementById('videoPlayer');
+
+  // Open modal when clicked
+  videoButton.addEventListener('click', function () {
+    // Show modal
+    modal.style.display = 'block';
+
+    //Replace the src attribute with the video URL
+    videoPlayer.src = 'https://www.youtube.com/embed/8sXRyHI3bLw';
+
+    // Close modal on close button click
+    closeButton.addEventListener('click', function () {
+      modal.style.display = 'none';
+      videoPlayer.src = '';
+    });
+
+    // Close modal on outter click
+    window.addEventListener('click', function (event) {
+      if (event.target == modal) {
+        modal.style.display = 'none';
+        videoPlayer.src = '';
+      }
+    });
+  });
 });
 
 // Navigation background on scroll
